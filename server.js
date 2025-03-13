@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGO_URI, {
 .catch(err => console.error("❌ Error al conectar a MongoDB", err));
 
 // Middleware
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 
 // Definir un modelo de datos
